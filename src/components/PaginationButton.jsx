@@ -1,5 +1,4 @@
 import { useContext } from "react"
-import MovieContext from "../context/MovieContext"
 
 function PaginationButton({ page, context }) {
   const { currentPage, changeCurrentPage } = useContext(context)

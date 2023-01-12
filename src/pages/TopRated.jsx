@@ -25,7 +25,7 @@ function TopRated() {
       }, 500)
     }
     getMovies();
-  }, [currentPage])
+  }, [currentPage, setActiveGenres, setLoading, setMovies, setTotalPages])
 
   const movieHasActiveGenres = (movie) => {
     if(activeGenres.length === 0) {

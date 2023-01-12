@@ -24,7 +24,7 @@ function Home() {
     reset();
     resetPopular();
     resetTopRated();
-  }, [])
+  }, [reset, resetPopular, resetTopRated])
 
   useEffect(() => {
     async function getPopular() {

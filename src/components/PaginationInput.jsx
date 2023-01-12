@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import MovieContext from "../context/MovieContext";
 
 function PaginationInput({ context }) {
   const [number, setNumber] = useState();

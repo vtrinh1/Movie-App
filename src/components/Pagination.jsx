@@ -1,5 +1,4 @@
 import { useContext } from "react"
-import MovieContext from "../context/MovieContext"
 import PaginationButton from "./PaginationButton"
 import PaginationInput from "./PaginationInput"
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import MovieSkeleton from "../components/MovieSkeleton";
 import Pagination from "../components/Pagination";
@@ -27,7 +26,7 @@ function Search() {
     return () => {
       document.removeEventListener('click', hideDropdownOnBlur)
     }
-  }, [])
+  }, [searchTerm])
 
   useEffect(() => {
     async function getMovies() {
@@ -43,7 +42,7 @@ function Search() {
       }
     }
     getMovies();
-  }, [currentPage])
+  }, [currentPage, searchText, setActiveGenres, setLoading, setMovies, setTotalPages])
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -248,7 +247,8 @@ function Search() {
                 if(sortBy === 'Featured') return a?.index - b?.index
                 if(sortBy === 'Newest') return Date.parse(b?.release_date) - Date.parse(a?.release_date)
                 if(sortBy === 'Oldest') return Date.parse(a?.release_date) - Date.parse(b?.release_date)
-                if(sortBy === 'Rating') return b?.vote_average - a?.vote_average
+                if (sortBy === 'Rating') return b?.vote_average - a?.vote_average
+                else return null
               })
               .filter(movie => movieHasActiveGenres(movie))
               .map((movie) => <Movie movie={movie} key={movie.id} />)

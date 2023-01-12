@@ -7,7 +7,6 @@ import MovieSkeleton from "../components/MovieSkeleton"
 import Pagination from "../components/Pagination"
 import FavouritesContext from "../context/FavouritesContext"
 import MovieContext from "../context/MovieContext"
-import RatingContext from "../context/RatingContext"
 
 function Favourites() {
   const [seeMore, setSeeMore] = useState(false);
@@ -42,7 +41,7 @@ function Favourites() {
       }, 500)
     }
     getMovies();
-  }, [currentPage])
+  }, [currentPage, setActiveGenres, setLoading, setMovies, setTotalPages])
 
   const movieHasActiveGenres = (movie) => {
     if(activeGenres.length === 0) {

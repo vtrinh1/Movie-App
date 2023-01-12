@@ -1,8 +1,7 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import MovieFact from "../components/MovieFact";
-import MovieContext from "../context/MovieContext";
 import Movie from "../components/Movie"
 import NoImage from "../assets/no_image.png"
 import MovieSkeleton from "../components/MovieSkeleton";
